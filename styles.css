@@ -1,0 +1,369 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    resize: none;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+    font-family: sans-serif;
+}
+
+/* Set up the header styles */
+header {
+    background-color: rgb(34, 32, 32);
+    color: white;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Set up the main section styles */
+main {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+}
+
+.home-section {
+    margin: 0 auto;
+    max-width: 150vh;
+    max-height: 100vh;
+    margin-bottom: 25vh;
+    /* space between home section and about section */
+}
+
+.introStuff {
+    display: flex;
+    justify-content: center;
+    /* Center align the title vertically */
+    height: 40vh;
+    width: 100%;
+    /* Extend the width to fill the viewport */
+    max-width: 100%;
+    /* Ensure it doesn't exceed the viewport width */
+    position: relative;
+    /* Ensure parent has a positioning context */
+
+    background-color: rgb(178, 177, 177);
+    border: 6px solid white;
+    /* Increased border thickness */
+    border-radius: 10px;
+    /* Add rounded corners */
+    padding: 20px;
+}
+
+.introTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Add margin to push content slightly above center */
+}
+
+.water {
+    height: 88px;
+    width: 100%;
+    /* Set the width to 100% to fill the .introStuff box */
+    background-image: url(Water_Background.png);
+    position: absolute;
+    bottom: 0;
+    /* Position the water at the bottom of .introStuff */
+    left: 0;
+    /* Start the water animation from the left of .introStuff */
+    display: block;
+    z-index: 0;
+    /* Set the water below other elements */
+    background-repeat: repeat-x;
+    animation: water 60s linear infinite;
+}
+
+.duck {
+    width: 100px;
+    /* Replace with the actual width of your duck.png image */
+    bottom: 10px;
+    position: absolute;
+    z-index: 1;
+    /* Set duck on top of water img */
+    animation: duck 3s ease-in-out alternate infinite;
+}
+
+.duck img {
+    width: 100%;
+}
+
+@keyframes water {
+    0% {
+        background-position: 0 0;
+        /* Start the animation from the left */
+    }
+
+    100% {
+        background-position: 100% 0;
+        /* Move the background to the right */
+    }
+}
+
+@keyframes duck {
+    100% {
+        transform: translateY(-5px);
+    }
+
+    0% {
+        transform: translateY(5px);
+    }
+}
+
+/* Add styles for the about section */
+.about-section {
+    margin: 0 auto;
+    max-width: 200vh;
+    max-height: 200vh;
+    margin-bottom: 25vh;
+    /* space between about section and project section */
+}
+
+.aboutTitle,
+.projectTitle {
+    text-align: center;
+    /* Center-align the text within the box */
+    margin-bottom: 5px;
+    /* Add margin to push content slightly above center */
+    background-color: rgb(178, 177, 177);
+    /* Grey background color */
+    border: 4px solid white;
+    /* Increased border thickness */
+    border-radius: 10px;
+    /* Add rounded corners */
+    padding: 10px;
+    /* Add padding to create a box around the text */
+    margin: 0 auto;
+    /* Center horizontally */
+    width: fit-content;
+}
+
+.aboutStuff {
+    background-color: rgb(34, 32, 32);
+    display: flex;
+    flex-direction: column;
+    /* Stack aboutContainer vertically */
+    align-items: center;
+    /* Center aboutContainer horizontally */
+    padding: 20px;
+    /* Add some padding to create space around content */
+}
+
+.aboutContainer {
+    display: flex;
+    width: 100%;
+    /* Take up full width of the container */
+    margin-bottom: 20px;
+    /* Add spacing between aboutContainer */
+}
+
+.text {
+    flex: 1;
+    /* Take up remaining space in the item */
+    padding: 10px;
+    /* Add some padding to text */
+}
+
+.image {
+    flex: 1;
+    /* Take up remaining space in the item */
+    text-align: center;
+    /* Center the image horizontally */
+}
+
+.image img {
+    max-width: 100%;
+    /* Ensure the image doesn't exceed the container width */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+p {
+    font-size: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    /* Add more CSS properties as needed */
+}
+
+/* Add styles for the project section */
+.project-section {
+    margin: 0 auto;
+    max-width: 200vh;
+    max-height: 200vh;
+    margin-bottom: 0;
+    /* space between project section and contact section */
+}
+
+.projectStuff {
+    background-color: rgb(34, 32, 32);
+    display: flex;
+    flex-direction: column;
+    /* Stack aboutContainer vertically */
+    align-items: center;
+    /* Center aboutContainer horizontally */
+    padding: 20px;
+    /* Add some padding to create space around content */
+}
+
+.project {
+    width: calc(50% - 20px);
+    /* Set the width of each article to 50% with some margin */
+    margin: 20px;
+}
+
+.project img {
+    max-width: 100%;
+    /* Ensure the image doesn't exceed the container width */
+    height: 300px;
+    /* Set a fixed height for the images (adjust the value as needed) */
+}
+
+/* Style for the Contact Section */
+.contact-section {
+    margin: 0 auto;
+    max-width: 200vh;
+    max-height: 50vh;
+    margin-bottom: 0;
+    /* space between contact section and end of page */
+}
+
+.contactStuff {
+    background-color: rgb(34, 32, 32);
+    display: flex;
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    padding: 20px;
+    /* Add some padding to create space around content */
+}
+
+/* Style for Social Icons and Email Icon */
+.contact-icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+    /* Adjust the icon size as needed */
+    margin: 0 10px;
+}
+
+/* Style for the Resume Button */
+.contact-info a.button {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.contact-info a.button:hover {
+    background-color: #005faa;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    body {
+        font-size: 10px; /* Adjust font size for smaller screens */
+    }
+
+    /* Adjust header styles for smaller screens */
+    header {
+        padding: 10px 0;
+    }
+
+    /* Adjust navigation styles for smaller screens */
+    nav li {
+        display: inline;
+        margin: 0 10px; /* Adjust the margin as needed for mobile view */
+        padding: 5px; /* Adjust the padding as needed for mobile view */
+    }
+
+    /* Center align navigation links */
+    nav ul {
+        text-align: center;
+    }
+
+    /* Increase spacing between navigation links */
+    nav li {
+        margin: 10px 0;
+    }
+
+    /* Make the logo or site title smaller */
+    .introTitle h1 {
+        font-size: 36px;
+    }
+
+    /* Center align the duck image */
+    .duck {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Make text within the .aboutContainer stack vertically */
+    .aboutContainer {
+        flex-direction: column;
+    }
+
+    /* Adjust padding for paragraphs */
+    p {
+        padding: 10px 0;
+    }
+    
+    /* Reduce the font size for the "About Me" section text */
+    .about-section p {
+        font-size: 16px; /* Adjust the font size as needed */
+    }
+
+    /* Add spacing between paragraphs in the "About Me" section */
+    .about-section p {
+        margin-bottom: 15px; /* Adjust the margin as needed */
+    }
+    /* Make project articles stack vertically */
+    .project {
+        width: 100%; /* Full width for projects */
+        margin: 20px 0; /* Add space between projects */
+    }
+
+    /* Make project images responsive */
+    .project img {
+        max-width: 100%;
+        height: 150px;
+    }
+
+    /* Center align social icons in the contact section */
+    .contact-icons {
+        justify-content: center;
+    }
+
+    /*Spacing between social icons */
+    .icon {
+        margin: 0 10px;
+    }
+
+    /* Adjust padding for the resume button */
+    .contact-info a.button {
+        padding: 10px 15px;
+    }
+}
